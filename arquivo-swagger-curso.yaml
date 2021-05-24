@@ -42,6 +42,47 @@ paths:
         500:
           description: Erro interno no servidor
 
+  '/conta/{agencia}/{numero}/{digito}/saldo':
+    get:
+      summary: Consulta Saldo
+      description: Consulta o saldo da conta do cliente.
+      operationId: consultaSaldo
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      security:
+        - BasicAuth: []
+      parameters:
+        - in: path
+          name: agencia
+          type: integer
+          format: int32
+          required: true
+        - in: path
+          name: numero
+          type: integer
+          format: int32
+          required: true
+        - in: path
+          name: digito
+          type: integer
+          format: int32
+          required: true
+        - in: header
+          name: Authorization
+          type: string
+          required: true
+      responses:
+        200:
+          description: Consulta a saldo efetuada com sucesso
+        400:
+          description: Requisição inválida
+        401:
+          description: Requisição não autorizada
+        500:
+          description: Erro no servidor
+
 definitions:
   Cliente:
     type: object
