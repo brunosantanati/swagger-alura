@@ -118,6 +118,8 @@ paths:
       responses:
         '201':
           description: Transação cadastrada com sucesso!
+          schema:
+            $ref: '#/definitions/Transacao'
         '400':
           description: Requisição inválida.
         '401':
@@ -171,3 +173,27 @@ definitions:
         example: 101.34
       cliente:
         $ref: '#/definitions/Cliente'
+      transacoes:
+        type: array
+        items:
+          $ref: '#/definitions/Transacao'
+
+  Transacao:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      tipo:
+        type: string
+        enum:
+          - debito
+          - deposito
+      valor:
+        type: number
+        format: double
+      data:
+        type: string
+        format: date-time
+      conta:
+        $ref: '#/definitions/Conta'
