@@ -91,6 +91,47 @@ paths:
         500:
           description: Erro no servidor
 
+  '/extrato/{agencia}/{numero}/{digito}':
+    get:
+      summary: Consulta Extrato
+      description: Consulta o extrato da conta do cliente.
+      operationId: consultaExtrato
+      security:
+        - BasicAuth: []
+      parameters:
+        - in: path
+          name: agencia
+          type: integer
+          format: int32
+          required: true
+        - in: path
+          name: numero
+          type: integer
+          format: int64
+          required: true
+        - in: path
+          name: digito
+          type: integer
+          format: int32
+          required: true
+        - in: header
+          name: Authorization
+          type: string
+          required: true
+      responses:
+        200:
+          description: Consulta de extrato efetuada com sucesso
+          schema:
+            type: number
+            format: double
+            example: 134.68
+        400:
+          description: Requisição inválida
+        401:
+          description: Requisição não autorizada
+        500:
+          description: Erro no servidor
+
   '/transacao':
     post:
       summary: Cadastra Transacao na Conta
