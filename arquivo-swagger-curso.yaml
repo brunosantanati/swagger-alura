@@ -17,15 +17,23 @@ info:
     url: http://localhost:8085/bytebank-api/v1/suporte
     email: suporte@bytebankapi.com
 
+securityDefinitions:
+  BasicAuth:
+    type: basic
+
+security:
+  - BasicAuth: []
+
+consumes:
+  - application/json
+produces:
+  - application/json
+
 paths:
   '/cliente':
     post:
       summary: Cadastra Cliente
       description: Cadastra um novo cliente
-      consumes:
-        - application/json
-      produces:
-        - application/json
       operationId: cadastraCliente
       parameters:
         - in: body
@@ -47,10 +55,6 @@ paths:
       summary: Consulta Saldo
       description: Consulta o saldo da conta do cliente.
       operationId: consultaSaldo
-      consumes:
-        - application/json
-      produces:
-        - application/json
       security:
         - BasicAuth: []
       parameters:
@@ -62,7 +66,7 @@ paths:
         - in: path
           name: numero
           type: integer
-          format: int32
+          format: int64
           required: true
         - in: path
           name: digito
@@ -76,6 +80,10 @@ paths:
       responses:
         200:
           description: Consulta a saldo efetuada com sucesso
+          schema:
+            type: number
+            format: double
+            example: 134.68
         400:
           description: Requisição inválida
         401:
