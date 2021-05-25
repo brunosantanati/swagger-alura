@@ -1,0 +1,9 @@
+Visualizar documentação Swagger(yaml)
+
+1-Usar o https://editor.swagger.io/
+
+2-Instalar o plugin "OpenAPI Preview" no Visual Studio Code
+Como usar: Ctrl + Shift + p e escolher "OpenAPI Preview"
+
+3-Rodar o projeto e acessar: http://localhost:8085/bytebank-api/v1/
+Vai redirecionar para http://localhost:8085/bytebank-api/v1/swagger-ui.html
