@@ -9,6 +9,13 @@ TESTAR INSTALAÇÃO
 
 swagger-cli -v
 
+Na máquina do trabalho após a instalação o swagger-cli não ficou disponível e tive que informar o caminho completo para rodar(no Git Bash):
+
+$ pwd
+/c/Users/meuuser/IdeaProjects/meuprojeto
+$ ./../../AppData/Roaming/npm/swagger-cli -v
+4.0.4
+
 USAR SWAGGER-CLI BUNDLE
 
 swagger-cli bundle parts/arquivo-swagger-curso.yaml --outfile arquivo-swagger.curso.yaml --type=yaml
