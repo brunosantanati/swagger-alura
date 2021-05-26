@@ -1,0 +1,33 @@
+INSTALAR SWAGGER-CLI
+
+npm install -g @apidevtools/swagger-cli
+
+https://www.npmjs.com/package/swagger-cli
+https://github.com/APIDevTools/swagger-cli
+
+USAR SWAGGER-CLI BUNDLE
+
+swagger-cli bundle parts/arquivo-swagger-curso.yaml --outfile arquivo-swagger.curso.yaml --type=yaml
+
+USAR SWAGGER-CLI VALIDATE
+
+swagger-cli validate arquivo-swagger.curso.yaml
+
+=======
+
+EXEMPLO DE USO NA PRÁTICA
+
+55119@LAPTOP-G59GHKBI MINGW64 ~/Documents/cursos/alura/swagger/swagger-alura/teste-multi-files (main)
+$ pwd
+/c/Users/55119/Documents/cursos/alura/swagger/swagger-alura/teste-multi-files
+
+55119@LAPTOP-G59GHKBI MINGW64 ~/Documents/cursos/alura/swagger/swagger-alura/teste-multi-files (main)
+$ swagger-cli bundle parts/arquivo-swagger-curso.yaml --outfile arquivo-swagger.curso.yaml --type=yaml
+Created arquivo-swagger.curso.yaml from parts/arquivo-swagger-curso.yaml
+
+55119@LAPTOP-G59GHKBI MINGW64 ~/Documents/cursos/alura/swagger/swagger-alura/teste-multi-files (main)
+$ swagger-cli validate arquivo-swagger.curso.yaml
+Swagger schema validation failed.
+  Additional properties not allowed: BadRequest at #/paths//transacao/{codigo}/delete/responses
+
+JSON_OBJECT_VALIDATION_FAILED
