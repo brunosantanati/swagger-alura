@@ -5,6 +5,10 @@ npm install -g @apidevtools/swagger-cli
 https://www.npmjs.com/package/swagger-cli
 https://github.com/APIDevTools/swagger-cli
 
+TESTAR INSTALAÇÃO
+
+swagger-cli -v
+
 USAR SWAGGER-CLI BUNDLE
 
 swagger-cli bundle parts/arquivo-swagger-curso.yaml --outfile arquivo-swagger.curso.yaml --type=yaml
