@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
-      <module name="teste-validation-e-annotations" target="1.7" />
+      <module name="teste-validation-e-annotations" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
