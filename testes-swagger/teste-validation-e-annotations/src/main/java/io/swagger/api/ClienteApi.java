@@ -25,7 +25,7 @@ import java.util.List;
 
 @Validated
 @Api(value = "cliente", description = "the cliente API")
-@RequestMapping(value = "/bytebank-api/v1")
+@RequestMapping(value = "/v1")
 public interface ClienteApi {
 
     @ApiOperation(value = "Cadastra Cliente", nickname = "cadastraCliente", notes = "Cadastra um novo cliente", response = Cliente.class, authorizations = {
